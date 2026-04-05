@@ -235,7 +235,11 @@ Create `.env` file:
 
 ```
 PORT=5000
-DATABASE_URL=your_postgres_url
+POSTGRES_HOST=xyz.supabase.com
+POSTGRES_PORT=1234
+POSTGRES_DATABASE=postgres
+POSTGRES_USER=db_user
+POSTGRES_PASSWORD=db_pass
 JWT_SECRET=your_secret
 ```
 
