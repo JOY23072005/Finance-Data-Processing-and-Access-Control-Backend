@@ -1,4 +1,3 @@
-// src/routes/user.routes.ts
 import express from "express";
 import { authenticate } from "../middleware/auth.middleware.js";
 import { authorize } from "../middleware/rbac.middleware.js";

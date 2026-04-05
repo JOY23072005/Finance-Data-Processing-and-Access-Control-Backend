@@ -1,4 +1,3 @@
-// src/middleware/rbac.middleware.ts
 import type { Request, Response, NextFunction } from "express";
 
 export const authorize = (roles: string[]) => {
