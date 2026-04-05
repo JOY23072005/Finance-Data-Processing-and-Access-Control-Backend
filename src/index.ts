@@ -1,11 +1,14 @@
 import express from "express";
 import cors from "cors";
 import 'dotenv/config';
+import type { Request,Response,NextFunction } from "express";  
+
 // Routes imports
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
 import recordRoutes from "./routes/record.routes.js"
 import categoryRoutes from "./routes/category.routes.js";
+import dashboardRoutes from "./routes/dashboard.routes.js";
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -17,6 +20,14 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/records", recordRoutes);
 app.use("/api/categories", categoryRoutes);
+app.use("/api/dashboard", dashboardRoutes);
+
+// Global Error Handler
+app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+  res.status(500).json({
+    message: err.message || "Internal Server Error",
+  });
+});
 
 app.listen(PORT,()=>{
     console.log("server running⌛");
