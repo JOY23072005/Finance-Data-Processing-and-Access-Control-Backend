@@ -4,11 +4,11 @@ import 'dotenv/config';
 import type { Request,Response,NextFunction } from "express";  
 
 // Routes imports
-import authRoutes from "./routes/auth.routes.js";
-import userRoutes from "./routes/user.routes.js";
-import recordRoutes from "./routes/record.routes.js"
-import categoryRoutes from "./routes/category.routes.js";
-import dashboardRoutes from "./routes/dashboard.routes.js";
+import authRoutes from "../src/routes/auth.routes.js";
+import userRoutes from "../src/routes/user.routes.js";
+import recordRoutes from "../src/routes/record.routes.js"
+import categoryRoutes from "../src/routes/category.routes.js";
+import dashboardRoutes from "../src/routes/dashboard.routes.js";
 
 const app = express();
 const PORT = process.env.PORT || 5001;
@@ -29,8 +29,8 @@ app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
   });
 });
 
-app.listen(PORT,()=>{
-    console.log("server running⌛");
-})
+// app.listen(PORT,()=>{
+//     console.log("server running⌛");
+// })
 
 export default app;
